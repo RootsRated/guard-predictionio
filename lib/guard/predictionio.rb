@@ -21,6 +21,8 @@ module Guard
     # @return [Object] the task result
     #
     def start
+      log :info, "Starting..."
+      log :info, `predictionio-start-all.sh`
     end
 
     # Called when `stop|quit|exit|s|q|e + enter` is pressed (when Guard quits).
@@ -29,6 +31,8 @@ module Guard
     # @return [Object] the task result
     #
     def stop
+      log :info, "Stopping..."
+      log :info, `predictionio-stop-all.sh`
     end
 
     # Called when `reload|r|z + enter` is pressed.
@@ -38,6 +42,7 @@ module Guard
     # @return [Object] the task result
     #
     def reload
+      stop && start
     end
 
     # Called when just `enter` is pressed
@@ -82,6 +87,12 @@ module Guard
     # @return [Object] the task result
     #
     def run_on_removals(paths)
+    end
+
+    private
+
+    def log(level, message)
+      UI.send(level, "[PredictionIO] - #{message}")
     end
   end
 end
