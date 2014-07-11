@@ -33,6 +33,10 @@ Add the guard definition to your Guardfile by running:
 
     $ guard init predictionio
 
+Install PredictionIO using their instructions:
+
+[http://docs.prediction.io/current/installation/index.html](http://docs.prediction.io/current/installation/index.html)
+
 ## Usage
 
 TODO: Write usage instructions here
