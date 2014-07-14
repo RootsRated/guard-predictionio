@@ -1,6 +1,9 @@
 require 'rspec'
+require 'coveralls'
 require 'guard/predictionio'
 ENV["GUARD_ENV"] = 'test'
+
+Coveralls.wear!
 
 RSpec.configure do |config|
   config.filter_run :focus => true
